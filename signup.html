@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fa_IR" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> صفحه ثبت نام</title>
+    <link rel="icon" href="image/chatLogo.png">
+    <link rel="stylesheet" href="./styles/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+</head>
+
+<body>
+
+
+
+
+    <img class="messengerpic" src="./image/Mobile login-amico (2).png" alt="#">
+    <img class="messengerIcon" src="image/chatLogo.png" alt="لوگو پیامرسان">
+    <h1 class="farawin">پیامرسان فراوین</h1>
+    <form action="#">
+        <fieldset>
+            <legend> ایجاد حساب کاربری</legend>
+            <div class="userPass" ;>
+                <input class="borderRadius" name="username" type="text" ; placeholder="نام کاربری"><br><br>
+                <input class="borderRadius" type="password" name="password" placeholder="رمز عبور"><br><br>
+                <input class="borderRadius" type="password" name="password" placeholder=" تکرار رمز عبور"><br><br>
+                <input class=" phone " type="tel" name="phone" placeholder="تلفن همراه"><br><br><br>
+            </div>
+            <div class="buttons">
+            <input type="submit" value="ثبت نام" class="borderRadius button" id="signup" >
+            <a href="./login.html"><button type="button" class="borderRadius button" id="login" >ورود</button></a>
+            </div>   
+        </fieldset>
+    </form>
+
+</body>
+<script>
+    const phoneInputField = document.querySelector(".phone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+        utilsScript:
+            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+</script>
+
+</html>
