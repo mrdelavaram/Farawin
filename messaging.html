@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="image/chatLogo.png">
+    <link rel="stylesheet" href="./styles/messaging.css">
+    <style>
+        .header-row {
+           display: none;
+        }
+     </style>
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title> پیامرسان فراوین </title>
+    
+</head>
+
+<body>
+    <div class="page-container">
+        <div class="contact-header border-radius">
+            <div class="title"><h1>پیامرسان فراوین</h1></div>
+            <button class="contact-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <div class=" modal">
+                
+                    <span class="close">&times;</span>
+                    <input  type="text" placeholder="نام مخاطب را وارد کنید">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  
+            </div>
+            <button class="add-contact"><i class="fa-solid fa-plus"></i></button>
+            <div class="add-contact-modal">
+
+            </div>
+        
+        </div>
+        <div class="contacts border-radius">
+            <table  class="table" style="width: 100%;">
+                <thead class="header-row">
+                    <tr>
+                        <th rowspan="2" >pic</th>
+                        <th style="width: 65%;">mmd</th>
+                    </tr>
+                    <tr>
+                        <th>dfsdf</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2" class="td1">
+                            <div class="user-pic box-shadow"><img src="./image/Koala.jpg" alt="عکس کاربر"></div>
+                        </td>
+                        <td class="td2">sadasd</td>
+                    </tr>
+                    <tr>
+                        <td class="td3">Lorem ipsum dolor sit amet consectetur.</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" class="td1">
+                            <div class="user-pic box-shadow"><img src="./image/Sample_User_Icon.png" alt="عکس کاربر"></div>
+
+                        </td>
+                        <td class="td2">sadasd</td>
+                    </tr>
+                    <tr>
+                        <td class="td3">Lorem ipsum dolor sit amet consectetur.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="user-info border-radius">
+            <img src="./image/Koala.jpg" class="box-shadow" alt="" style="width: 80px;">
+            <h2>آقای کوآلا</h2>
+            
+        </div>
+        <div class="messages">
+            <table>
+                <tbody >
+                    <tr>
+                        <td class="border-radius">سلام خوبیمخقثنتسیابنایسنتبانسیانبانسییابنسیابناسینبانسیابنساینباسینبانسیابنایسنبایسنبانسیابیسبسیبسیبسیبسیبیسبیسبیسبسیبیسبیسبسیبسیب؟</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="border-radius">سلام مرسی</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="chat-input border-radius">
+            <i class="material-symbols-outlined" style="font-size: xx-large;">send</i>
+            <input type="text" placeholder="پیامتان را بنویسید...">
+
+        </div>
+        
+    </div>
+</body>
+<script src="./js/messaging.js"></script>
+<script src="https://kit.fontawesome.com/2fb2cce5dc.js" crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,226 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+caption, tfoot,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@font-face {
+	font-family: 'Vazirmatn';
+	src: url('../fonts/webfonts/Vazirmatn[wght].woff2') format('woff2 supports variations'),
+		url('../fonts/webfonts/Vazirmatn[wght].woff2') format('woff2-variations');
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+body {
+	background-color: #85FFBD;
+	background-image: url("/image/wepik-export-20231008135903gFC0.png") ;
+    background-size: cover;
+	font-family: Vazirmatn;
+
+}
+.border-radius {
+
+	border-radius: 10px;
+	border-style: none;
+	box-shadow: 0px 0px 5px 1px rgba(15, 15, 15, 0.2);
+    background-color: whitesmoke;
+}
+.box-shadow{
+	box-shadow: 0px 0px 5px 1px rgba(15, 15, 15, 0.2);
+}
+.page-container{
+    box-sizing: border-box;
+    
+    height: 94vh;
+    margin: 3vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr  7fr 1fr;
+    gap: 1vh;
+    
+}
+.contact-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    grid-column-start: 1;
+    grid-column-end:  2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: whitesmoke;
+}
+.contact-header .title{
+flex-grow: 8;
+text-align: center;
+font-size: large;
+
+}
+.contact-header .contact-search{
+    flex-grow: 1;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.modal {
+    grid-column-start: 1;
+    grid-column-end:  2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: none; /* Hidden by default */
+    position: relative; /* Stay in place */
+    overflow: hidden; /* Enable scroll if needed */
+    
+  }
+  .modal input{
+    flex-grow: 7;
+  }
+  .modal i{
+    flex-grow: 1;
+  }
+  /* The Close Button */
+.close {
+    flex-grow: 1;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.contact-header .add-contact{
+    flex-grow: 1;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.contacts{
+    grid-column: 1/2;
+    grid-row: 2/4;
+    background-color: whitesmoke;
+}
+
+
+.contacts table{
+    
+    border-width: 5px;
+    border-style: hidden;
+    
+}
+.contacts tr{
+    height: 35px;
+    margin: 20px;
+}
+.contacts th,td{
+    border-width: 5px;
+    text-align: right;
+    border-style: hidden;
+    
+
+}
+
+.contacts .td1{
+    width: 18%;
+    
+}
+.contacts .td3{
+    opacity: 0.5;
+}
+.contacts .user-pic{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.contacts img{
+    width: 100%;
+    height: 100%;
+}
+
+.user-info{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    display: flex;
+    align-items: center;
+}
+.user-info img{
+    margin: 3%;
+
+}
+.messages{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    
+}
+.messages table{
+    width: 100%;
+    
+}
+
+
+.chat-input{
+    grid-column: 2/3;
+    grid-row: 3/4;
+    display: flex;
+    
+}
+.chat-input input{
+    flex-grow: 8;
+    
+}
+.material-symbols-outlined {
+    flex-grow: 2;
+    color: #294d3a;
+    align-self: center;
+    justify-self: flex-start;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
