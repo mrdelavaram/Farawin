@@ -51,12 +51,19 @@ table {
 	font-display: swap;
 }
 
+@font-face {
+  font-family: "MozillaTwemojiColr";
+  src: url("https://cdn.jsdelivr.net/npm/twemoji-colr-font@^14/twemoji.woff2") format("woff2");
+}
+
+emoji-picker {
+  --emoji-font-family: MozillaTwemojiColr;
+}
 body {
 	background-color: #85FFBD;
 	background-image: url("/image/wepik-export-20231008135903gFC0.png") ;
     background-size: cover;
-	font-family: Vazirmatn;
-
+	font-family: Vazirmatn,MozillaTwemojiColr;
 }
 .border-radius {
 
@@ -66,16 +73,19 @@ body {
     background-color: whitesmoke;
 }
 .box-shadow{
-	box-shadow: 0px 0px 5px 1px rgba(15, 15, 15, 0.2);
+	box-shadow: 0px 0px 5px 1px rgba(15, 15, 15, 0.1);
 }
 .page-container{
     box-sizing: border-box;
     
     height: 94vh;
-    margin: 3vh;
+    margin-left: 6vh;
+    margin-right: 6vh;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr  7fr 1fr;
+    grid-template-columns: 1fr 2.7fr;
+    grid-template-rows: 1fr  8fr 1fr;
     gap: 1vh;
     
 }
@@ -107,9 +117,9 @@ font-size: large;
     grid-column-end:  2;
     grid-row-start: 1;
     grid-row-end: 2;
-    display: none; /* Hidden by default */
-    position: relative; /* Stay in place */
-    overflow: hidden; /* Enable scroll if needed */
+    display: none; 
+    position: relative; 
+    overflow: hidden; 
     
   }
   .modal input{
@@ -146,14 +156,18 @@ font-size: large;
 
 
 .contacts table{
-    
+    margin: 2%;
     border-width: 5px;
     border-style: hidden;
     
 }
+.header-row {
+  display: none;
+}
 .contacts tr{
-    height: 35px;
-    margin: 20px;
+    position: relative;
+    height: 10px;
+    
 }
 .contacts th,td{
     border-width: 5px;
@@ -163,23 +177,20 @@ font-size: large;
 
 }
 
-.contacts .td1{
-    width: 18%;
+.contacts .td-pic{
+    width: 25%;
     
 }
-.contacts .td3{
+.contacts .td-message{
     opacity: 0.5;
 }
 .contacts .user-pic{
-    position: relative;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    overflow: hidden;
+    filter: drop-shadow(0 0 0.2rem rgba(15, 15, 15, 0.5));
 }
 .contacts img{
     width: 100%;
-    height: 100%;
+    clip-path: circle();
+    
 }
 
 .user-info{
@@ -189,18 +200,17 @@ font-size: large;
     align-items: center;
 }
 .user-info img{
-    margin: 3%;
+    margin: 0.5%;
+    clip-path: circle();
 
 }
 .messages{
     grid-column: 2/3;
     grid-row: 2/3;
-    
+    overflow-y: scroll;
+    --emoji-font-family: MozillaTwemojiColr;
 }
-.messages table{
-    width: 100%;
-    
-}
+
 
 
 .chat-input{
@@ -210,10 +220,29 @@ font-size: large;
     
 }
 .chat-input input{
+    margin-right: 3%;
     flex-grow: 8;
+    background: none;
+    border: none;
+    font-family: VazirMatn,MozillaTwemojiColr;
+
     
 }
+.emojiBtn{
+  background: none;
+  border: none;
+}
+#inputMessage::placeholder{
+  padding-right: 1%;
+}
+#inputMessage:focus-visible
+{
+  border:none
+}
+
+
 .material-symbols-outlined {
+    cursor: pointer;
     flex-grow: 2;
     color: #294d3a;
     align-self: center;
@@ -224,3 +253,92 @@ font-size: large;
   'GRAD' 0,
   'opsz' 24
 }
+.tooltip:not(.shown) {
+  display: none;
+}
+.right {
+    margin: 0.5%;
+    position: relative;
+    background:whitesmoke;
+    text-align: right;
+    min-width: 5%;
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    float: right;
+    right: 20px;
+    
+  }
+ 
+
+  .right::before {
+    content: '';
+    position: absolute;
+    visibility: visible;
+    top: -1px;
+    right: -10px;
+    border: 10px solid transparent;
+    border-top: 10px solid #ccc;
+  }
+  
+  .right::after {
+    content: '';
+    position: absolute;
+    visibility: visible;
+    top: 0px;
+    right: -8px;
+    border: 10px solid transparent;
+    border-top: 10px solid whitesmoke;
+    clear: both;
+  }
+  
+.left {
+    margin: 0.5%;
+    display: block;
+    position: relative;
+    background:rgb(219, 219, 219);
+    text-align: left;
+    min-width: 5%;
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: 1px solid rgba(245, 245, 245, 0.541);
+    float: left;
+    left: 20px;
+    
+  }
+  
+  .left::before {
+    content: '';
+    position: absolute;
+    visibility: visible;
+    top: -1px;
+    left: -10px;
+    border: 10px solid transparent;
+    border-top: 10px solid rgba(245, 245, 245, 0.541);
+  }
+  
+  .left::after {
+    content: '';
+    position: absolute;
+    visibility: visible;
+    top: 0px;
+    left: -8px;
+    border: 10px solid transparent;
+    border-top: 10px solid rgb(219, 219, 219);;
+    clear: both;
+  }
+  .fill-context {
+    clear: both;
+  }
+  .sendBtn{
+    background: none;
+    border: none;
+  }
+
+  .displayNone{
+    display: none;
+  }
+  
+  

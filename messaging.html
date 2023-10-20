@@ -7,12 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="image/chatLogo.png">
     <link rel="stylesheet" href="./styles/messaging.css">
-    <style>
-        .header-row {
-           display: none;
-        }
-     </style>
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title> پیامرسان فراوین </title>
     
 </head>
@@ -48,23 +43,22 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td rowspan="2" class="td1">
-                            <div class="user-pic box-shadow"><img src="./image/Koala.jpg" alt="عکس کاربر"></div>
+                        <td rowspan="2" class="td-pic">
+                            <div class="user-pic "><img src="./image/Koala.jpg" alt="عکس کاربر"></div>
                         </td>
-                        <td class="td2">sadasd</td>
+                        <td class="td-userName">sadasd</td>
                     </tr>
                     <tr>
-                        <td class="td3">Lorem ipsum dolor sit amet consectetur.</td>
+                        <td class="td-message">Lorem ipsum dolor sit amet consectetur.</td>
                     </tr>
                     <tr>
-                        <td rowspan="2" class="td1">
-                            <div class="user-pic box-shadow"><img src="./image/Sample_User_Icon.png" alt="عکس کاربر"></div>
-
+                        <td rowspan="2" class="td-pic">
+                            <div class="user-pic"><img src="./image/Sample_User_Icon.png" alt="عکس کاربر"></div>
                         </td>
-                        <td class="td2">sadasd</td>
+                        <td class="td-userName">sadasd</td>
                     </tr>
                     <tr>
-                        <td class="td3">Lorem ipsum dolor sit amet consectetur.</td>
+                        <td class="td-message">Lorem ipsum dolor sit amet consectetur.</td>
                     </tr>
                 </tbody>
             </table>
@@ -74,28 +68,65 @@
             <h2>آقای کوآلا</h2>
             
         </div>
-        <div class="messages">
-            <table>
-                <tbody >
-                    <tr>
-                        <td class="border-radius">سلام خوبیمخقثنتسیابنایسنتبانسیانبانسییابنسیابناسینبانسیابنساینباسینبانسیابنایسنبایسنبانسیابیسبسیبسیبسیبسیبیسبیسبیسبسیبیسبیسبسیبسیب؟</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td class="border-radius">سلام مرسی</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div  class="messages">
+            <div class="right box-shadow options">
+                <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias quam necessitatibus placeat cum voluptas consequatur quasi laborum corporis id ad iure dolorem quod, voluptatibus mollitia veniam deserunt, atque quis magnam?</span>
+              </div>         
+              <div class="fill-context">
+
+              </div>
+            <div class="left box-shadow">
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, veniam!</span>
+                
+              </div> 
+              <div class="fill-context">
+                
+            </div>     
+            
+            
         </div>
         <div class="chat-input border-radius">
-            <i class="material-symbols-outlined" style="font-size: xx-large;">send</i>
-            <input type="text" placeholder="پیامتان را بنویسید...">
-
+            
+            <div class="tooltip" role="tooltip" > <emoji-picker emoji-version="14.0"></emoji-picker> </div>
+            <button type="submit" class="sendBtn"> <i class="material-symbols-outlined" style="font-size: xx-large;">send</i> </button>
+            <button  class="emojiBtn"> <i class="material-symbols-outlined" style="font-size: xx-large;">mood</i> </button>
+            <input  type="text" id="inputMessage" placeholder="پیامتان را بنویسید...">
+             
         </div>
         
     </div>
 </body>
+
 <script src="./js/messaging.js"></script>
 <script src="https://kit.fontawesome.com/2fb2cce5dc.js" crossorigin="anonymous"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
+<script type="module">
+ 
+   
+    import * as Popper from 'https://cdn.jsdelivr.net/npm/@popperjs/core@^2/dist/esm/index.js'
+  const emojiButton = document.querySelector('.emojiBtn')
+  const tooltip = document.querySelector('.tooltip')
+  Popper.createPopper(emojiButton, tooltip,{
+    placement:"top",
+  });
+
+  document.querySelector('.emojiBtn').onclick = () => {
+    tooltip.classList.remove('displayNone');
+    tooltip.classList.toggle('shown');
+  }
+  
+  import insertText from 'https://cdn.jsdelivr.net/npm/insert-text-at-cursor@0.3.0/index.js'
+  
+  document.querySelector('emoji-picker').addEventListener('emoji-click', e => {
+    insertText(document.querySelector('#inputMessage'), e.detail.unicode)
+    
+  })
+
+  window.onclick = function(event) {
+  if (event.target !== tooltip && event.target!==emojiButton) {
+    tooltip.classlist.add('displayNone');
+  }
+}
+  </script>
+
 </html>
