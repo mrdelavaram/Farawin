@@ -253,8 +253,11 @@ font-size: large;
   'GRAD' 0,
   'opsz' 24
 }
-.tooltip:not(.shown) {
+.tooltip{
   display: none;
+}
+.shown {
+  display: block;
 }
 .right {
     margin: 0.5%;

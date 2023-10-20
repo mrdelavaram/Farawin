@@ -100,33 +100,7 @@
 <script src="./js/messaging.js"></script>
 <script src="https://kit.fontawesome.com/2fb2cce5dc.js" crossorigin="anonymous"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
-<script type="module">
- 
-   
-    import * as Popper from 'https://cdn.jsdelivr.net/npm/@popperjs/core@^2/dist/esm/index.js'
-  const emojiButton = document.querySelector('.emojiBtn')
-  const tooltip = document.querySelector('.tooltip')
-  Popper.createPopper(emojiButton, tooltip,{
-    placement:"top",
-  });
-
-  document.querySelector('.emojiBtn').onclick = () => {
-    tooltip.classList.remove('displayNone');
-    tooltip.classList.toggle('shown');
-  }
-  
-  import insertText from 'https://cdn.jsdelivr.net/npm/insert-text-at-cursor@0.3.0/index.js'
-  
-  document.querySelector('emoji-picker').addEventListener('emoji-click', e => {
-    insertText(document.querySelector('#inputMessage'), e.detail.unicode)
-    
-  })
-
-  window.onclick = function(event) {
-  if (event.target !== tooltip && event.target!==emojiButton) {
-    tooltip.classlist.add('displayNone');
-  }
-}
+<script type="module" src="/js/emoji.js">
   </script>
 
 </html>
